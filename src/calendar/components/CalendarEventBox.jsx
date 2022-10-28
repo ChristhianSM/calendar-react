@@ -1,8 +1,11 @@
 import React from 'react'
 
-export const CalendarEventBox = (props) => {
-  console.log(props);
+export const CalendarEventBox = ({ event }) => {
+  const { title, user } = event;
   return (
-    <div>CalendarEventBox</div>
+    <>
+      <strong>{ title }</strong>
+      <p>{ user.name }</p>
+    </>
   )
 }
