@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { currentEventActive, onAddNewEvent, onUpdateEvent } from '../store';
+import { currentEventActive, onAddNewEvent, onDeleteEvent, onUpdateEvent } from '../store';
 
 export const useCalendarStore = () => {
   const dispatch = useDispatch();
@@ -19,6 +19,10 @@ export const useCalendarStore = () => {
     }
   }
 
+  const startDeleteEvent = () => {
+    dispatch( onDeleteEvent() );
+  }
+
   return {
     // Propiedades
     events,
@@ -26,6 +30,7 @@ export const useCalendarStore = () => {
 
     // Metodos
     currentEvent,
-    startSavingEvent
+    startSavingEvent,
+    startDeleteEvent
   }
 }
