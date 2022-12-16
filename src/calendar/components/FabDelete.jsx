@@ -3,10 +3,10 @@ import { useCalendarStore } from '../../hooks'
 
 export const FabDelete = () => {
 
-  const { deleteEvent } = useCalendarStore();
+  const { startDeleteEvent } = useCalendarStore();
 
   const handleDeleteEvent = () => {
-    deleteEvent();
+    startDeleteEvent();
   }
   return (
     <button
